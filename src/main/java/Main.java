@@ -12,17 +12,15 @@ public class Main {
         Product p4 = new Product("PR5283", "AppleWatch");
         Product p5 = new Product("PR4678", "AirTag");
 
-        Map<String, Product> allProducts = new HashMap<>();
-        allProducts.put(p1.productId(), p1);
-        allProducts.put(p2.productId(), p2);
-        allProducts.put(p3.productId(), p3);
-        allProducts.put(p4.productId(), p4);
-        allProducts.put(p5.productId(), p5);
-
         // SHOP SERVICE
-        ProductRepo productRepo = new ProductRepo(allProducts);
-        OrderMapRepo orderMapRepo = new OrderMapRepo();
-        ShopService shopService = new ShopService(productRepo, orderMapRepo);
+        ProductRepo productRepo = new ProductRepo();
+        productRepo.addProduct(p1);
+        productRepo.addProduct(p2);
+        productRepo.addProduct(p3);
+        productRepo.addProduct(p4);
+        productRepo.addProduct(p5);
+        OrderMapRepo orderRepo = new OrderMapRepo();
+        ShopService shopService = new ShopService(productRepo, orderRepo);
 
         // NEW ORDER
         Product p6 = new Product("PR531812", "Samsung Galaxy S8");
