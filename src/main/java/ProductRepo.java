@@ -12,4 +12,8 @@ public class ProductRepo{
     public Product findProduct(String productId){
         return allProducts.get(productId);
     }
+
+    public ProductRepo(Map<String, Product> allProducts) {
+        this.allProducts = allProducts;
+    }
 }

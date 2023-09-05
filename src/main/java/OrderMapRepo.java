@@ -1,7 +1,8 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class OrderMapRepo implements OrderRepo {
-    Map<String, Order> allOrders;
+    Map<String, Order> allOrders = new HashMap<>();
 
     @Override
     public void addOrder(Order order) {

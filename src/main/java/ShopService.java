@@ -24,6 +24,7 @@ public class ShopService{
         // create new Order
         Order newOrder = new Order(newOrderId, orderedProducts);
         orderMapRepo.addOrder(newOrder);
+        System.out.println("Your order with the ID " + newOrderId + " has been placed.");
     }
 
     public ShopService(ProductRepo productRepo, OrderMapRepo oderMapRepo) {
