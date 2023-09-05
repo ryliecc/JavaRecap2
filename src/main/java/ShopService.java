@@ -24,7 +24,7 @@ public class ShopService {
             Product foundProduct = productRepo.findProduct(current.productId());
             BigDecimal currentPrice = current.price().multiply(BigDecimal.valueOf(current.amount()));
             if (foundProduct == null) {
-                System.out.println("Sorry, the product " + current.name() + " is not available. It has been removed from your order.");
+                System.out.println("Sorry, the product " + current.name() + " is not available in our shop. It has been removed from your order.");
             } else if (foundProduct.amount() == 0) {
                 System.out.println("Sorry, the product " + current.name() + " is not in stock. Please order again later. The product has been removed from your order.");
             } else if (foundProduct.amount() < current.amount()) {
