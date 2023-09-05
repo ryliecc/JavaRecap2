@@ -1,20 +1,22 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class ProductRepo{
+public class ProductRepo {
     public Map<String, Product> allProducts = new HashMap<>();
 
-    public void addProduct(Product product){
+    public void addProduct(Product product) {
         allProducts.put(product.productId(), product);
     }
-    public void deleteProduct(String productId){
+
+    public void deleteProduct(String productId) {
         allProducts.remove(productId);
     }
-    public Product findProduct(String productId){
+
+    public Product findProduct(String productId) {
         return allProducts.get(productId);
     }
 
-    public void reduceAmount(String productId, int amountToBeRemoved){
+    public void reduceAmount(String productId, int amountToBeRemoved) {
         Product current = findProduct(productId);
         int amount = current.amount() - amountToBeRemoved;
         deleteProduct(productId);

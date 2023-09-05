@@ -3,9 +3,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class ShopService{
+public class ShopService {
     ProductRepo productRepo;
     OrderMapRepo orderMapRepo;
+
     public void createNewOrder(List<Product> orderedProducts) {
 
         // generate random orderId
@@ -24,7 +25,7 @@ public class ShopService{
             BigDecimal currentPrice = current.price().multiply(BigDecimal.valueOf(current.amount()));
             if (foundProduct == null) {
                 System.out.println("Sorry, the product " + current.name() + " is not available. It has been removed from your order.");
-            }else if((foundProduct != null) && (foundProduct.amount() < current.amount())){
+            } else if (foundProduct.amount() < current.amount()) {
                 System.out.println("Sorry, the amount of " + current.name() + " you ordered is not available. It has been removed from your order. Please order " + foundProduct.amount() + " or less of this product.");
             } else {
                 finalOrderedProducts.add(current);
