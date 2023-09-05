@@ -1,6 +1,6 @@
 import java.util.Map;
 
-public class ProductRepo {
+public class ProductRepo{
     public Map<String, Product> allProducts;
 
     public void addProduct(Product product){
