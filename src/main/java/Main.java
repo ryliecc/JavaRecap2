@@ -34,6 +34,7 @@ public class Main {
         orderedProducts.add(op3);
         orderedProducts.add(op4);
         shopService.createNewOrder(orderedProducts);
+        System.out.println(productRepo);
 
 
     }

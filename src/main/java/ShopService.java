@@ -23,12 +23,13 @@ public class ShopService{
             Product foundProduct = productRepo.findProduct(current.productId());
             BigDecimal currentPrice = current.price().multiply(BigDecimal.valueOf(current.amount()));
             if (foundProduct == null) {
-                System.out.println("The product " + current.name() + " is not available.");
+                System.out.println("Sorry, the product " + current.name() + " is not available. It has been removed from your order.");
             }else if((foundProduct != null) && (foundProduct.amount() < current.amount())){
-                System.out.println("Sorry, the amount of " + current.name() + " you ordered is not available.");
+                System.out.println("Sorry, the amount of " + current.name() + " you ordered is not available. It has been removed from your order. Please order " + foundProduct.amount() + " or less of this product.");
             } else {
                 finalOrderedProducts.add(current);
                 finalPrice = finalPrice.add(currentPrice);
+                productRepo.reduceAmount(current.productId(), current.amount());
             }
         }
 
