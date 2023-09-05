@@ -11,7 +11,7 @@ public class Main {
         Product p2 = new Product("PR5789", "MacBook Air", new BigDecimal("1199.00"), 10);
         Product p3 = new Product("PR2672", "AirPods Pro", new BigDecimal("299.00"), 10);
         Product p4 = new Product("PR5283", "AppleWatch", new BigDecimal("999.00"), 10);
-        Product p5 = new Product("PR4678", "AirTag", new BigDecimal("39.00"), 10);
+        Product p5 = new Product("PR4678", "AirTag", new BigDecimal("39.00"), 0);
 
         // SHOP SERVICE
         ProductRepo productRepo = new ProductRepo();
@@ -28,11 +28,13 @@ public class Main {
         Product op2 = new Product("PR3675", "iPhone 12", new BigDecimal("799.00"), 1);
         Product op3 = new Product("PR5789", "MacBook Air", new BigDecimal("1199.00"), 2);
         Product op4 = new Product("PR5283", "AppleWatch", new BigDecimal("999.00"), 11);
+        Product op5 = new Product("PR4678", "AirTag", new BigDecimal("39.00"), 1);
         List<Product> orderedProducts = new ArrayList<>();
         orderedProducts.add(op1);
         orderedProducts.add(op2);
         orderedProducts.add(op3);
         orderedProducts.add(op4);
+        orderedProducts.add(op5);
         shopService.createNewOrder(orderedProducts);
         System.out.println(productRepo);
 
